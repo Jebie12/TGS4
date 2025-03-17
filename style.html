@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bisection Method</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen">
+        <div class="loader"></div>
+        <p></p>
+    </div>
+
+    <!-- Burger Icon and Dropdown Menu -->
+    <div class="menu-container">
+        <div class="burger-icon" id="burgerIcon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="#inputParameters">Input Parameters</a>
+            <a href="#results">Results</a>
+            <a href="#newInterval">New Interval Decisions</a>
+            <a href="#steps">Step-by-Step Calculations</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Input Parameters Section -->
+        <div id="inputParameters" class="card">
+            <h2>Input Parameters</h2>
+            <form id="bisectionForm">
+                <div class="form-group">
+                    <label for="function">Function (e.g., 2*x**2 + 2*x - 10):</label>
+                    <input type="text" id="function" placeholder="Enter the Function" required>
+                </div>
+                <div class="form-group">
+                    <label for="a">Interval Start (a):</label>
+                    <input type="number" id="a" step="any" placeholder="First The Interval" required>
+                </div>
+                <div class="form-group">
+                    <label for="b">Interval (b):</label>
+                    <input type="number" id="b" step="any" placeholder="Second The Interval" required>
+                </div>
+                <div class="form-group">
+                    <label for="tolerance">Tolerance:</label>
+                    <input type="number" id="tolerance" step="any" placeholder="stopping condition" required>
+                </div>
+                <div class="form-group">
+                    <label for="maxIterations">Max Iterations:</label>
+                    <input type="number" id="maxIterations" required>
+                </div>
+                <button type="submit">Calculate</button>
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="card">
+            <h2>Results</h2>
+            <div class="table-container">
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Iteration</th>
+                            <th>a</th>
+                            <th>b</th>
+                            <th>f(a)</th>
+                            <th>f(b)</th>
+                            <th>t</th>
+                            <th>f(t)</th>
+                            <th>Error</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Results will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- Error Message -->
+            <div id="errorMessage" style="color: red; font-weight: bold; margin-top: 10px;"></div>
+        </div>
+
+        <!-- New Interval Decisions Section -->
+        <div id="newInterval" class="card">
+            <h2>New Interval Decisions</h2>
+            <div class="table-container">
+                <table id="intervalTable">
+                    <thead>
+                        <tr>
+                            <th>f(t) * f(a)</th>
+                            <th>f(t) * f(b)</th>
+                            <th>New Interval</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Interval decisions will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Step-by-Step Calculations Section -->
+        <div id="steps" class="card">
+            <h2>Step-by-Step Calculations</h2>
+            <div class="table-container">
+                <table id="stepsTable">
+                    <thead>
+                        <tr>
+                            <th>Iteration</th>
+                            <th>Steps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Step-by-step calculations will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

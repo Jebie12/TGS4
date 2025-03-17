@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Page</title>
+    <link rel="stylesheet" href="stayl.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen">
+        <div class="loader"></div>
+        <p>Loading...</p>
+    </div>
+
+    <div class="container">
+        <h1>Welcome to the Bisection Method Calculator <br>Team TUGAS</h1>
+        <button id="startButton">Start</button>
+    </div>
+
+    <script>
+        // Get references to the loading screen and start button
+        const loadingScreen = document.getElementById('loadingScreen');
+        const startButton = document.getElementById('startButton');
+
+        // Initially hide the loading screen
+        loadingScreen.style.display = 'none';
+
+        // Add click event listener to the start button
+        startButton.addEventListener('click', function () {
+            // Show the loading screen
+            loadingScreen.style.display = 'flex';
+
+            // Simulate a loading delay (e.g., 2 seconds)
+            setTimeout(() => {
+                // Redirect to the bisection.html page after the delay
+                window.location.href = 'style.html';
+            }, 2000); // 2000 milliseconds = 2 seconds
+        });
+    </script>
+</body>
+</html>
